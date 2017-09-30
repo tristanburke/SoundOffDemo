@@ -12,5 +12,5 @@ songs = [{:title => 'Father Stretch My Hands Pt. 2', :artist => 'Kanye West', :i
 ]
 
 songs.each do |song|
-  Song.create!(song)
+  Song.create(song)
 end
