@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+songs = [{:title => 'Father Stretch My Hands Pt. 2', :artist => 'Kanye West', :image => '', :mp3 => ''},
+          {:title => 'Oh Sheit It\'s X', :artist => 'Thundercat', :image => '', :mp3 => ''},
+          {:title => 'Baby You\'re Out', :artist => 'Mac DeMarco', :image => '', :mp3 => ''}
+]
+
+songs.each do |song|
+  Song.create!(song)
+end
