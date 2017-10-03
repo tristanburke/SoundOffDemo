@@ -2,6 +2,7 @@ class DiscoveryController < ApplicationController
 
   def show
     @song = Song.find(1)
+    @image_path = 'assets/' + @song.image + '.jpg'
   end
 
   def index
