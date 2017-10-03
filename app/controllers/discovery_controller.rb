@@ -1,8 +1,21 @@
 class DiscoveryController < ApplicationController
+  respond_to :html, :js
 
   def show
-    @song = Song.find(1)
-    @image_path = 'assets/' + @song.image + '.jpg'
+    if session[:index].nil?
+      session[:index] = 0
+    end
+    session[:index] = (session[:index])%3 + 1
+
+    @song = Song.find(session[:index])
+    @image_path = '../assets/' + @song.image + '.jpg'
+    respond_to do |format|
+      format.html {render :partial => './../views/discovery/show.html.erb'}
+      format.js { }
+    end
+  end
+
+  def toggle
   end
 
   def index

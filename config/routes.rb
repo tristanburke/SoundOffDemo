@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # map '/' to be a redirect to '/discover#show'
   root 'discovery#show'
 
+  get 'discovery/show', to: 'discovery#show'
 end
