@@ -1,6 +1,7 @@
 class DiscoveryController < ApplicationController
 
   def show
+    @song = Song.find(1)
   end
 
   def index
