@@ -4,7 +4,6 @@ class DiscoveryController < ApplicationController
   end
 
   def index
-    redirect_to(discovery_path)
   end
 
   def new
