@@ -1,23 +1,8 @@
-<html>
-<%= stylesheet_link_tag 'discovery' %>
-<div class="container">
-  <div class="jumbotron">
-    <div class="header-button home-button">
-      <i onclick="" class="fa fa-3x fa-home" aria-hidden="true"></i>
-    </div>
-    <div class="header-button user">
-      <i class="fa fa-3x fa-user" aria-hidden="true"></i>
-    </div>
-    <div class="text-center">
-      <h1>Discover</h1>
-      <h3>New Music. Unheard Talent.</h3>
-    </div>
-  </div>
-  <div class="center">
-    <div class="discovery_main">
-      <div class="music-display">
-        <div class="image-wrapper">
-          <img id="song_art" src=<%= @image_path %> >
+
+<div class="discovery_main">
+  <div class="music-display">
+    <div class="image-wrapper">
+      <img id="song_art" src=<%= @image_path %> >
           <!--
           <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="75"
@@ -25,29 +10,21 @@
             </div>
           </div>
           -->
-        </div>
-        <div *ngIf="show_play_status">
-          <div *ngIf="playing" class="play-icon">
+    </div>
+
+    <div *ngIf="show_play_status">
+      <div *ngIf="playing" class="play-icon">
             <!-- <i class="fa fa-4x fa-play" aria-hidden="true"></i> -->
-          </div>
-          <div *ngIf="!playing" class="play-icon">
+      </div>
+      <div *ngIf="!playing" class="play-icon">
             <!-- <i class="fa fa-5x fa-pause" aria-hidden="true"></i> -->
-          </div>
-        </div>
-      </div>
-      <div class="controls" id="skip_song">
-        <h1 id="song_title"><%= @song.title %></h1>
-        <h3 id="song_artist"><%= @song.artist %></h3>
-        <%= form_tag discovery_show_path, :method => :get, :remote => true do %>
-            <%= submit_tag 'Next' %>
-        <% end %>
       </div>
     </div>
+
+    <div class="controls">
+      <h1 id="song_title"><%= @song_title %></h1>
+      <h3 id="song_artist"><%= @song_artist %></h3>
+    </div>
+
   </div>
-  <footer class="container-fluid soundOffFooter">
-    <div class="text-center">
-      <p>All Rights Reserved - Copyright SoundOff Inc. &copy; 2017 </p>
-    </div>
-  </footer>
 </div>
-</html>

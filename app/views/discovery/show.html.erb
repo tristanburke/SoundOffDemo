@@ -1,0 +1,31 @@
+<html>
+<%= stylesheet_link_tag 'discovery' %>
+<div class="container">
+  <div class="jumbotron">
+    <div class="header-button home-button">
+      <i onclick="" class="fa fa-3x fa-home" aria-hidden="true"></i>
+    </div>
+    <div class="header-button user">
+      <i class="fa fa-3x fa-user" aria-hidden="true"></i>
+    </div>
+    <div class="text-center">
+      <h1>Discover</h1>
+      <h3>New Music. Unheard Talent.</h3>
+    </div>
+  </div>
+  <div class="center" id="song_temp">
+    <%= render partial: './discovery/show.html.erb' %>
+    <%= form_tag discovery_show_path, :method => :get, :remote => true do %>
+        <%= submit_tag 'Next' %>
+    <% end %>
+  </div>
+</div>
+
+
+<footer class="container-fluid soundOffFooter">
+  <div class="text-center">
+    <p>All Rights Reserved - Copyright SoundOff Inc. &copy; 2017 </p>
+  </div>
+</footer>
+</div>
+</html>
