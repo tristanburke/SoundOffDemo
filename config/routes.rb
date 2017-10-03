@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :discovery
   # map '/' to be a redirect to '/discover'
 
-  root 'discovery#index'
+  root 'discovery#show'
 
 end
