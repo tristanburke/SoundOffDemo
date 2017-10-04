@@ -13,9 +13,8 @@
       <h3>New Music. Unheard Talent.</h3>
     </div>
   </div>
-  <div class="center" id="song_temp">
-    <%= render partial: './discovery/show.html.erb' %>
-    <%= form_tag discovery_show_path, :method => :get, :remote => true do %>
+  <div class="center" id="song_info">
+    <%= form_tag(discovery_show_path, :method => :get, :remote => true) do %>
         <%= submit_tag 'Next' %>
     <% end %>
   </div>
@@ -27,5 +26,4 @@
     <p>All Rights Reserved - Copyright SoundOff Inc. &copy; 2017 </p>
   </div>
 </footer>
-</div>
 </html>

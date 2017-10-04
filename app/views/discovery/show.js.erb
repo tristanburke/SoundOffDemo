@@ -1,1 +1,1 @@
-$('#song_temp').html("<%= render partial: './discovery/show.html.erb' %>")
+$('#song_info').html("<%= escape_javascript( render :partial => 'show', :locals => { :song_title => @song.title, :song_artist => @song.artist, :img => @img  } ) %>");

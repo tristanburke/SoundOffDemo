@@ -1,4 +1,5 @@
 class DiscoveryController < ApplicationController
+  respond_to :js, :html
 
   def show
     if session[:index].nil?
@@ -6,9 +7,11 @@ class DiscoveryController < ApplicationController
     end
     session[:index] = (session[:index])%3 + 1
     @song = Song.find(session[:index])
-    @song_title = @song.title
-    @song_artist = @song.artist
-    @image_path = '../assets/' + @song.image + '.jpg'
+    @img = '../assets/' + @song.image + '.jpg'
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def toggle
