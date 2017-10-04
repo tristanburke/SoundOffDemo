@@ -1,16 +1,20 @@
 class DiscoveryController < ApplicationController
-  respond_to :js, :html
 
   def show
     if session[:index].nil?
       session[:index] = 0
     end
-    session[:index] = (session[:index])%3 + 1
     @song = Song.find(session[:index])
     @img = '../assets/' + @song.image + '.jpg'
+  end
+
+  def next
+    session[:index] = (session[:index])%3 + 1
+    @song = Song.find(session[:index]%3 + 1)
+    @img = '../assets/' + @song.image + '.jpg'
     respond_to do |format|
-      format.html {}
-      format.js {}
+      format.html { render 'show' }
+      format.js { render 'show' }
     end
   end
 

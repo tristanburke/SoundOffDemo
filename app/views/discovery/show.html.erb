@@ -15,8 +15,18 @@
   </div>
   <div class="center">
     <div class="discovery_main" id="song_info">
+      <div class="music-display">
+        <div class="image-wrapper">
+          <img id="song_art" src=<%= @img %> >
+        </div>
+      </div>
+
+      <div class="controls">
+        <h1 id="song_title"><%= @song.title %></h1>
+        <h3 id="song_artist"><%= @song.artist %></h3>
+      </div>
     </div>
-    <%= form_tag(discovery_show_path, :method => :get, :remote => true) do %>
+    <%= form_tag(discovery_next_path, :method => :post, :remote => true) do %>
         <%= submit_tag 'Next' %>
     <% end %>
   </div>
