@@ -13,17 +13,17 @@
       <h3>New Music. Unheard Talent.</h3>
     </div>
   </div>
-  <div class="center" id="song_info">
+  <div class="center">
+    <div class="discovery_main" id="song_info">
+    </div>
     <%= form_tag(discovery_show_path, :method => :get, :remote => true) do %>
         <%= submit_tag 'Next' %>
     <% end %>
   </div>
+  <footer class="container-fluid soundOffFooter">
+    <div class="text-center">
+      <p>All Rights Reserved - Copyright SoundOff Inc. &copy; 2017 </p>
+    </div>
+  </footer>
 </div>
-
-
-<footer class="container-fluid soundOffFooter">
-  <div class="text-center">
-    <p>All Rights Reserved - Copyright SoundOff Inc. &copy; 2017 </p>
-  </div>
-</footer>
 </html>

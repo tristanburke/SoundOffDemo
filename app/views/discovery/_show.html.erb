@@ -1,12 +1,10 @@
-<div class="discovery_main">
   <div class="music-display">
     <div class="image-wrapper">
-      <img id="song_art" src=<%= :img %> >
+      <img id="song_art" src=<%= @img %> >
     </div>
   </div>
 
   <div class="controls">
-    <h1 id="song_title"><%= :song_title %></h1>
-    <h3 id="song_artist"><%= :song_artist %></h3>
+    <h1 id="song_title"><%= @song.title %></h1>
+    <h3 id="song_artist"><%= @song.artist %></h3>
   </div>
-</div>

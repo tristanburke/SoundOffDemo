@@ -9,8 +9,8 @@ class DiscoveryController < ApplicationController
     @song = Song.find(session[:index])
     @img = '../assets/' + @song.image + '.jpg'
     respond_to do |format|
-      format.html
-      format.js
+      format.html {}
+      format.js {}
     end
   end
 
