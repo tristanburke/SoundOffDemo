@@ -9,12 +9,12 @@
       <i class="fa fa-3x fa-user" aria-hidden="true"></i>
     </div>
     <div class="text-center">
-      <h1>Discover</h1>
+      <h1 class="animate bounce">Discover</h1>
       <h3>New Music. Unheard Talent.</h3>
     </div>
   </div>
-  <div class="center">
-    <div class="discovery_main" id="song_info">
+  <div class="center" id="song_info">
+    <div class="animated slideInRight discovery_main">
       <div class="music-display">
         <div class="image-wrapper">
           <img id="song_art" src=<%= @img %> >
@@ -26,9 +26,6 @@
         <h3 id="song_artist"><%= @song.artist %></h3>
       </div>
     </div>
-    <%= form_tag(discovery_next_path, :method => :post, :remote => true) do %>
-        <%= submit_tag 'Next' %>
-    <% end %>
   </div>
   <footer class="container-fluid soundOffFooter">
     <div class="text-center">
@@ -37,3 +34,21 @@
   </footer>
 </div>
 </html>
+<script>
+
+  $(document).ready(function(){
+      window.addEventListener('keypress', myEventHandler, false);
+  });
+
+  function myEventHandler(e){
+    var keyCode = e.keyCode;
+    if(keyCode == 39) {
+      $.ajax({
+          url: "/discovery/next",
+          type: 'POST',
+          dataType: 'script'
+      });
+    }
+  }
+
+</script>

@@ -108,3 +108,7 @@ h1, h3 {
 .progress-bar {
     background-color: #f47142;
 }
+.buttonNext {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
