@@ -2,6 +2,7 @@
   <div class="music-display">
     <div class="image-wrapper">
       <img id="song_art" src=<%= @img %> >
+      <progress class="progressbar" id="progressbar" value="0" max="100"> </progress>
     </div>
   </div>
 
@@ -10,3 +11,5 @@
     <h3 id="song_artist"><%= @song.artist %></h3>
   </div>
 </div>
+<audio id="songMP3" ontimeupdate="updateProgress()" src="<%= @mp3 %>"></audio>
+

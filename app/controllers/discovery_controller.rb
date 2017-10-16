@@ -6,12 +6,14 @@ class DiscoveryController < ApplicationController
     end
     @song = Song.find(session[:index])
     @img = '../assets/' + @song.image + '.jpg'
+    @mp3 = '../assets/' + @song.mp3 + '.mp3'
   end
 
   def next
     session[:index] = (session[:index])%(Song.count)+ 1
     @song = Song.find(session[:index])
     @img = '../assets/' + @song.image + '.jpg'
+    @mp3 = '../assets/' + @song.mp3 + '.mp3'
     respond_to do |format|
       format.html { render 'show' }
       format.js { render 'show' }
@@ -19,6 +21,7 @@ class DiscoveryController < ApplicationController
   end
 
   def toggle
+
   end
 
   def index

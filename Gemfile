@@ -51,6 +51,7 @@ group :development do
   gem 'haml'
   gem 'mousetrap-rails'
   gem 'animate-rails'
+  gem 'audite'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

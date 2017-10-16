@@ -95,7 +95,7 @@ h1, h3 {
 .fa {
     color: white;
 }
-.progress {
+.progressbar {
     width: 400px;
     height: 10px;
     position: absolute;
@@ -105,8 +105,8 @@ h1, h3 {
     z-index: 2;
     border-radius: 0;
 }
-.progress-bar {
-    background-color: #f47142;
+.progress[value] {
+    color: white;
 }
 .buttonNext {
     padding-top: 15px;

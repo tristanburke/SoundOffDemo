@@ -9,7 +9,7 @@
       <i class="fa fa-3x fa-user" aria-hidden="true"></i>
     </div>
     <div class="text-center">
-      <h1 class="animate bounce">Discover</h1>
+      <h1 class="animated bounce">Discover</h1>
       <h3>New Music. Unheard Talent.</h3>
     </div>
   </div>
@@ -18,6 +18,7 @@
       <div class="music-display">
         <div class="image-wrapper">
           <img id="song_art" src=<%= @img %> >
+          <progress class="progressbar" id="progressbar" value="0" max="100"> </progress>
         </div>
       </div>
 
@@ -25,6 +26,7 @@
         <h1 id="song_title"><%= @song.title %></h1>
         <h3 id="song_artist"><%= @song.artist %></h3>
       </div>
+      <audio id="songMP3" ontimeupdate="updateProgress()" src="<%= @mp3 %>"></audio>
     </div>
   </div>
   <footer class="container-fluid soundOffFooter">
@@ -35,10 +37,13 @@
 </div>
 </html>
 <script>
+  var playing = true;
+
 
   $(document).ready(function(){
-      window.addEventListener('keypress', myEventHandler, false);
+      window.addEventListener('keydown', myEventHandler, false);
   });
+
 
   function myEventHandler(e){
     var keyCode = e.keyCode;
@@ -49,6 +54,25 @@
           dataType: 'script'
       });
     }
+    else if (keyCode == 38) {
+
+    }
+    else if (keyCode == 32){
+        if (playing) {
+            document.getElementById('songMP3').play();
+        } else {
+            document.getElementById('songMP3').pause();
+        }
+        playing = !playing
+    }
+  }
+  function updateProgress() {
+      var value = 0;
+      var audio = document.getElementById('songMP3');
+      if (audio.currentTime > 0) {
+          value = Math.floor((100 / audio.duration) * audio.currentTime);
+      }
+      document.getElementById("progressbar").value = value
   }
 
 </script>

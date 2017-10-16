@@ -43,6 +43,7 @@ GEM
     animate-rails (1.0.10)
       rails
     arel (8.0.0)
+    audite (0.4.0)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.1.0)
@@ -192,6 +193,7 @@ PLATFORMS
 
 DEPENDENCIES
   animate-rails
+  audite
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
